@@ -1,12 +1,12 @@
 # Ritwik Takkar - Workout Routine Generator
 
-# Randomness (in case user wnats a random workout routine)
+# Randomness (in case user wants a random workout routine)
 import random
 
 # for GUI 
 import tkinter as tk
 
-# This class is to create exercises
+# This class creates exercises
 class Exercise():
     
     def __init__(self,b='',n='',e='',o=1):
@@ -149,8 +149,8 @@ def writer(l1,l2,l3,l4,l5,l6):
     text.write(l6)
     text.close()
 
-# a sort method that you write that sorts this List or Dictionary based on a specified criterion. creating a function that sorts exercise routine based on
-# order of body parts (legs, shoulder, back then chest)
+# a sort method that you write that sorts this List or Dictionary based on a specified criterion. 
+# creating a function that sorts exercise routine based on order of body parts (legs, shoulder, back then chest)
 def e_sort(exercise):
     return exercise.order
 
@@ -170,7 +170,7 @@ def GUI():
     label1 = tk.Label(main_window, text=str(reader())+"\n \nThe information above is also available in a text file named 'Routine.txt'")
     label1.pack()
 
-# The objects below are exercises
+# The objects below are exercises of class "Exercise"
 d_gobletsquat = Exercise('legs','goblet squats','dumbbells', 1)
 d_onearmrow = Exercise('back','one arm dumbbell rows', 'dumbbells', 3)
 d_arnoldpress = Exercise('shoulders','Arnold presses', 'dumbbells', 2)
@@ -186,7 +186,7 @@ w_bridge = Exercise('back','bridges','your bodyweight', 3)
 w_sideplank = Exercise('shoulders','side planks','your bodyweight', 2)
 w_pushup = Exercise('chest','push ups','your bodyweight', 4)
 
-# a List or Dictionary of objects of a class of your own design (not primitive types or Strings). This list contains exercise objects organized by body part 
+# This list contains exercise objects organized by body part 
 legs = [d_gobletsquat, b_squat, w_squat]
 shoulders = [d_arnoldpress, b_shoulderpress, w_sideplank]
 chest = [d_chestpress, b_benchpress, w_pushup]
@@ -202,7 +202,7 @@ s_barbell = sorted(barbell, key = e_sort)
 s_dumbbell = sorted(dumbell, key = e_sort)
 s_bweight = sorted(bweight, key = e_sort)
 
-# Criterion 3: interactive input and output. (asking user to enter file name of where they wish to work out (to read from))
+# Defining main function: 
 def main():
     user_equip = input("What equipment is available in your gym? Choices include: barbell, dumbbell and nothing.\nNote that nothing (bodyweight) is automatically included.\nEnter equipments with a space in between: ")
     user_equip = user_equip.lower()
